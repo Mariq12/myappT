@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Hola Mari',
+        title: 'Bienvenido a la app Mari',
         home: HomeScreen());
   }
 }
