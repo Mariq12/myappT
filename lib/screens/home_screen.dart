@@ -38,7 +38,8 @@ class _HomeScreenState extends State<HomeScreen> {
         onTap: (index) {
           currentPage = index;
           pageController.animateToPage(index,
-              duration: const Duration(milliseconds: 300), curve: Curves.easeOut);
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeOut);
           setState(() {});
         },
         backgroundColor: Colors.amber,
@@ -58,15 +59,23 @@ class _HomeScreenState extends State<HomeScreen> {
 class CustomScreen extends StatelessWidget {
   final Color color;
 
-  const CustomScreen({required this.color});
+  const CustomScreen({super.key, required this.color});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: color,
-      child: Center(
+      child: const Center(
         child: Text('Cambiar page'),
       ),
     );
   }
+}
+
+@override
+Widget build(BuildContext context) {
+  return TextButton(
+    onPressed: () => throw Exception(),
+    child: const Text("Throw Test Exception"),
+  );
 }
